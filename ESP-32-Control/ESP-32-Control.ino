@@ -7,5 +7,5 @@ void setup() {
 
   if(!PS4.begin("Mac Address of ESP 32")) // This if statement will only execute if True so when it fails to connect it will return True and run the code
    Serial.println("Ps4 Controller not paired"); // This is will allow the microcontroller and the computer to communicate (serial) and print the following response
-
+   while(1); // This will make it go into a infinite loop which will make the program stop and get stuck here in other words
 }
