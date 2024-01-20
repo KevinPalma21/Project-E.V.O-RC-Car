@@ -3,5 +3,9 @@
 
 void setup() {
 
-  Serial.begin(115200) //This is the default baud rate this allows for faster data transfer
+  Serial.begin(115200); //This is the default baud rate this allows for faster data transfer
+
+  if(!PS4.begin("Mac Address of ESP 32")) // This if statement will only execute if True so when it fails to connect it will return True and run the code
+   Serial.println("Ps4 Controller not paired"); // This is will allow the microcontroller and the computer to communicate (serial) and print the following response
+
 }
