@@ -7,7 +7,7 @@ void setup() {
   // Replace the "1a:2b:3c:01:01:01" with the MAC address
   // the controller wants to pair to
   // Note: MAC address must be unicast
-  PS4.begin("e8:61:7e:cc:84:7d");
+  PS4.begin("48:e7:29:9e:6b:10");
   Serial.println("Ready.");
 
   Serial.println("WiFi MAC: ");
