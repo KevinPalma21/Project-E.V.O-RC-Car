@@ -1,15 +1,28 @@
 #include <PS4Controller.h>
-#include <BluetoothSerial.h>
+#include <WiFi.h>
 
 void setup() {
+  Serial.begin(115200);
 
-  Serial.begin(115200); //This is the default baud rate this allows for faster data transfer
+  // Replace the "1a:2b:3c:01:01:01" with the MAC address
+  // the controller wants to pair to
+  // Note: MAC address must be unicast
+  PS4.begin("e8:61:7e:cc:84:7d");
+  Serial.println("Ready.");
 
-  if(!PS4.begin( 12:48:30.464 )){ // This if statement will only execute if True so when it fails to connect it will return True and run the code. Mac adress of the ESP32
-   Serial.println("Ps4 Controller not paired"); // This is will allow the microcontroller and the computer to communicate (serial) and print the following response
-   while(1); // This will make it go into a infinite loop which will make the program stop or in other words get stuck here if the controller doesn't connnect
+  Serial.println("WiFi MAC: ");
+  Serial.println(WiFi.macAddress());
 }
- Serial.println("Ps4 controller Connected");
+
+void loop() {
+  if (PS4.isConnected()) {
+    Serial.println("Connected!");
+    Serial.println(WiFi.macAddress());
+  }
+  else {
+    Serial.println("Not Connected!");
+    Serial.println(WiFi.macAddress());
+  }
+
+  delay(3000);
 }
-
-
