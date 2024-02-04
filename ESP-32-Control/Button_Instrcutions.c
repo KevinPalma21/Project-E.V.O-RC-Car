@@ -21,11 +21,8 @@ if (PS4.isConnected()) {           // This will call the function if it is true 
    SqaureButtonPress();
    Serial.prinln("Square Button");
    }
-
-
-
-
-
+  
+  if(PS4.Button())
 
 
 }
