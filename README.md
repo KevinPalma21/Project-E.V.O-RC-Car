@@ -1,3 +1,4 @@
-#Project E.V.O.
+#RC Car Controller Enhancement Branch
+Welcome to the coolest corner of our project repository, where we've turned ordinary into extraordinary! 🚗💨 This branch is dedicated to supercharging your RC car experience by assigning unique, dynamic actions to each button on a PS4 controller.
 
-This represents a collaborative endeavor undertaken by a group of dedicated students, all of whom are majoring in Engineering at the University of Illinois at Chicago (U.I.C). Our focus encompasses a diverse array of projects, leveraging our expertise and skills in programming languages such as Python, C, and C++. Our commitment is to foster an environment of innovation and excellence, as we navigate through the complexities and challenges of our field.
+
