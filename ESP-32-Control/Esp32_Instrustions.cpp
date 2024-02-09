@@ -4,24 +4,21 @@
 
  void Esp32_Instruction() {
 
-  if (PS4.isConnected()) {
-    // Correctly calling the method to get the R2 button value and assign it to an integer variable
-    int R2Value = PS4.R2Value();
+  if (PS4.isConnected()) {           // Will call this function if it is True
 
-    // Checking if R2Value is greater than or equal to 0
-    if (R2Value >= 0) {
-      // Mapping the R2Value to a PWM value
-      int pWmValue = map(R2Value, 0, 255, 0, 255);
+    int R2Value = PS4.R2Value();     //This will return a value depending on the amount of pressure that is given
 
-      // If you need to write to a PWM channel, make sure to uncomment and correct this line
-      // ledcWrite(channel, pWmValue);
+    if (R2Value > 0) {
 
-      // Printing the mapped PWM value
-      Serial.println(R2Value);
+      int pWmValue = map(R2Value, 0, 255, 0, 255);    //Based on the values that are given back it will be able to assign that value to power outputted
+
+      // ledcWrite(channel, pWmValue);     // From previous line it will get the pWm value and actually output that given power
+
+         Serial.println(R2Value);          // This will just print out the power that is being outputted to terminal
     }
-    // Optional: You can handle the case where R2 is not pressed as needed
+
     // else {
-    //   ledcWrite(channel, 0);  // Setting power to zero if no pressure is detected
+    //   ledcWrite(channel, 0);  // It will make the power zero if nothing is detected
     // }
   }
  }
