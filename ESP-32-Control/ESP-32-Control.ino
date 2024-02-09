@@ -1,6 +1,9 @@
 #include <PS4Controller.h>
 #include <WiFi.h>
 
+
+void Esp32_Instruction();
+
 void setup() {
   Serial.begin(115200);
 
@@ -15,6 +18,7 @@ void setup() {
 }
 
 void loop() {
+
   if (PS4.isConnected()) {
     Serial.println("Connected!");
     Serial.println(WiFi.macAddress());
