@@ -16,10 +16,20 @@
 
          Serial.println(R2Value);          // This will just print out the power that is being outputted to terminal
     }
-
-    // else {
-    //   ledcWrite(channel, 0);  // It will make the power zero if nothing is detected
-    // }
+    else {
+      ledcWrite(17, 0);  // It will make the power zero if nothing is detected
+     }
   }
+  if (PS4.isConnected()) {
+    
+
+
+
+  }
+
+
+
  }
+
+
 

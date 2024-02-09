@@ -13,10 +13,10 @@ void Esp32_Instruction();
 void setup() {
   Serial.begin(115200);
 
-  ledcSetup(PwM_Channel,PwM_Freq, PwM_Reso );
-  ledcAttachPin(16, 17)
+  ledcSetup(PwM_Channel,PwM_Freq, PwM_Reso );    // This will give the channel we want these properties
+  ledcAttachPin(16, 17);                         // This will send the TX channel to the RX channnel which will give it the necessary output
 
-  PS4.begin("48:e7:29:9b:ae:30");
+  PS4.begin("48:e7:29:9b:ae:30");                // This is the macadress of Esp32 which the PS4 contoller connects too
   Serial.println("Ready.");
 
   Serial.println("WiFi MAC: ");
