@@ -12,7 +12,7 @@
 
       int pWmValue = map(R2Value, 0, 255, 0, 255);    //Based on the values that are given back it will be able to assign that value to power outputted
 
-      // ledcWrite(channel, pWmValue);     // From previous line it will get the pWm value and actually output that given power
+       ledcWrite(17, pWmValue);     // From previous line it will get the pWm value and actually output that given power
 
          Serial.println(R2Value);          // This will just print out the power that is being outputted to terminal
     }

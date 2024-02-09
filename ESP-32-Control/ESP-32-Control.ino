@@ -1,14 +1,21 @@
 #include <PS4Controller.h>
 #include <WiFi.h>
 
+#define PwM_Channel 17  // Rx is recieving 16 nd Tx is trasnimitting 17
+#define PwM_Freq 5000 // This will allow motor for steady motion and less noise
+#define PwM_Reso 8   // Controller is 8 bits so it will send 8 bits a time
+
+
+
+
 void Esp32_Instruction();
 
 void setup() {
   Serial.begin(115200);
 
-  // Replace the "1a:2b:3c:01:01:01" with the MAC address
-  // the controller wants to pair to
-  // Note: MAC address must be unicast
+  ledcSetup(PwM_Channel,PwM_Freq, PwM_Reso );
+  ledcAttachPin(16, 17)
+
   PS4.begin("48:e7:29:9b:ae:30");
   Serial.println("Ready.");
 
