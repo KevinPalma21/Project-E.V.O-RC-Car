@@ -17,7 +17,7 @@
       // ledcWrite(channel, pWmValue);
 
       // Printing the mapped PWM value
-      Serial.println(pWmValue);
+      Serial.println(R2Value);
     }
     // Optional: You can handle the case where R2 is not pressed as needed
     // else {

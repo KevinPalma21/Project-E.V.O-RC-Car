@@ -1,7 +1,6 @@
 #include <PS4Controller.h>
 #include <WiFi.h>
 
-
 void Esp32_Instruction();
 
 void setup() {
@@ -10,7 +9,7 @@ void setup() {
   // Replace the "1a:2b:3c:01:01:01" with the MAC address
   // the controller wants to pair to
   // Note: MAC address must be unicast
-  PS4.begin("48:e7:29:9e:6b:10");
+  PS4.begin("48:e7:29:9b:ae:30");
   Serial.println("Ready.");
 
   Serial.println("WiFi MAC: ");
@@ -22,6 +21,7 @@ void loop() {
   if (PS4.isConnected()) {
     Serial.println("Connected!");
     Serial.println(WiFi.macAddress());
+     Esp32_Instruction();
   }
   else {
     Serial.println("Not Connected!");
