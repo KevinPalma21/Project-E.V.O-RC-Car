@@ -3,7 +3,7 @@
 
 
  void Esp32_Instruction() {
-  
+
   if (PS4.isConnected()) {
     // Correctly calling the method to get the R2 button value and assign it to an integer variable
     int R2Value = PS4.R2Value();
@@ -24,4 +24,5 @@
     //   ledcWrite(channel, 0);  // Setting power to zero if no pressure is detected
     // }
   }
-}
+ }
+ //HI
