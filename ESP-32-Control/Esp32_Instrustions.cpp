@@ -2,7 +2,7 @@
 #include <WiFi.h>
 
 bool breaking = false;
-bool isCARon = false;
+bool isCaron = false;
 bool lastState = false;
 
  void Esp32_Instruction() {
@@ -23,6 +23,8 @@ bool lastState = false;
       ledcWrite(1, 0);  // It will make the power zero if nothing is detected
      }
   }
+
+
   if (PS4.isConnected()) {           // Will call this function if it is True
 
     int RStick = PS4.RStickX();     //This will return a value depending on the amount of pressure that is given
@@ -40,31 +42,6 @@ bool lastState = false;
     }
   }
 
-
-  /*
-
-
- void Esp32_Instruction() {
- 
-  // This makes R2 the value to go forward in the RC car
-
-  if (PS4.isConnected()) {           // Will call this function if it is True
-
-    int R2Value = PS4.R2Value();     //This will return a value depending on the amount of pressure that is given
-
-    if (R2Value > 0) {
-
-      int pWmValue = map(R2Value, 0, 255, 0, 255);    //Based on the values that are given back it will be able to assign that value to power outputted
-
-       ledcWrite(17, pWmValue);     // From previous line it will get the pWm value and actually output that given power
-
-         Serial.println(R2Value);          // This will just print out the power that is being outputted to terminal
-    }
-    else {
-      ledcWrite(17, 0);  // It will make the power zero if nothing is detected
-     }
-  }
- 
    // This will make the L2 value to go backwards in the RC car
 
   if (PS4.isConnected()) {           // Will call this function if it is True
@@ -84,6 +61,8 @@ bool lastState = false;
      
      }
   }
+
+
   
   if (PS4.isConnected()){     // Call this function if it is true
      
@@ -102,18 +81,14 @@ bool lastState = false;
  
   if (PS4.isConnected()){
 
-    bool curentState = PS4.Options();
+    bool currentState = PS4.Options();
 
     if (currentState && !lastState){
-      isCaron = !isCaron
+      isCaron = !isCaron;
     }
-     
+  }
 
 
-    }
-
-  } 
-  */
 }
 
 
