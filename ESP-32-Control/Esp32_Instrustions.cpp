@@ -68,7 +68,11 @@ bool lastState = false;
      
    if (PS4.L1()){             // Function is called when this button is pressed
 
-    breaking = true;          // Set function equal to True for if statment to use later on also breaks are activated
+    breaking = true;           // Set function equal to True for if statment to use later on also breaks are activated
+    
+    Serial.print(" Car is breaking");  
+    Serial.println(breaking ? "True" : "False");
+
 
    }
 
@@ -79,17 +83,21 @@ bool lastState = false;
    }
   }
  
-  if (PS4.isConnected()){
+  if (PS4.isConnected()) {
+    bool currentState = PS4.Options(); // Get the current state of the Options button
 
-    bool currentState = PS4.Options();
+    // Check if the Options button was pressed since the last check
+    if (currentState && !lastState) {
+        isCaron = !isCaron; // Toggle the on/off state of the car
 
-    if (currentState && !lastState){
-      isCaron = !isCaron;
+        // Print the new state of the car to the serial monitor
+        Serial.print("Car is currently on: ");
+        Serial.println(isCaron ? "True" : "False");
     }
-  }
 
-
+    // Update the lastState variable to the current state for the next loop iteration
+    lastState = currentState;
 }
-
+ }
 
 
